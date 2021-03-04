@@ -5,7 +5,27 @@ describe("FizzBuzz: ", function () {
 
         // e.g. [0, 1, 2, "Fizz", 4, "Buzz", ...]
 
+      
+
         let results = [];
+
+        for(let i = 0 ; i <= 100 ; i++){
+            results.push(i);
+        }  
+  
+        let resultsCopy = results.map(num =>  {
+            if((num % 3 === 0) && (num % 5 === 0)){
+                num = "FizzBuzz";
+            }else if (num % 3 === 0){
+                num = "Fizz";
+            }else if(num % 5 === 0){
+                num = "Buzz";
+            }
+                 return num;
+            })
+            
+        results = resultsCopy;
+        
 
         expect(results[1]).toBe(1);
         expect(results[3]).toBe("Fizz");
@@ -14,3 +34,4 @@ describe("FizzBuzz: ", function () {
         expect(results[52]).toBe(52);
     });
 });
+
